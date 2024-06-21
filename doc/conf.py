@@ -471,40 +471,16 @@ sphinx_gallery_conf = {
     "reference_url": dict(mne=None),
     "examples_dirs": examples_dirs,
     "subsection_order": ExplicitOrder(
-        [
-            "../examples/io/",
-            "../examples/simulation/",
-            "../examples/preprocessing/",
-            "../examples/visualization/",
-            "../examples/time_frequency/",
-            "../examples/stats/",
-            "../examples/decoding/",
-            "../examples/connectivity/",
-            "../examples/forward/",
-            "../examples/inverse/",
-            "../examples/realtime/",
-            "../examples/datasets/",
-            "../tutorials/intro/",
-            "../tutorials/io/",
-            "../tutorials/raw/",
-            "../tutorials/preprocessing/",
-            "../tutorials/epochs/",
-            "../tutorials/evoked/",
-            "../tutorials/time-freq/",
-            "../tutorials/forward/",
-            "../tutorials/inverse/",
-            "../tutorials/stats-sensor-space/",
-            "../tutorials/stats-source-space/",
-            "../tutorials/machine-learning/",
-            "../tutorials/clinical/",
-            "../tutorials/simulation/",
-            "../tutorials/sample-datasets/",
-            "../tutorials/visualization/",
-            "../tutorials/misc/",
+        [   "../examples/simulation", 
+            "../examples/visualization",
+            "../examples/simulation",
+            "../tutorials/intro",
+            "../tutorials/inverse", 
+            "../tutorials/misc"
         ]
     ),
     "gallery_dirs": gallery_dirs,
-    "default_thumb_file": os.path.join("_static", "mne_helmet.png"),
+    "default_thumb_file": os.path.join("_images", "whobpyt_logo_v1.png"),
     "backreferences_dir": "generated",
     "plot_gallery": "True",  # Avoid annoying Unicode/bool default warning
     "thumbnail_size": (160, 112),
@@ -726,19 +702,14 @@ html_theme_options = {
             icon="fa-brands fa-discord fa-fw",
         ),
         dict(
-            name="Mastodon",
+            name="Twitter",
             url="https://fosstodon.org/@mne",
             icon="fa-brands fa-mastodon fa-fw",
             attributes=dict(rel="me"),
         ),
         dict(
-            name="Forum",
-            url="https://mne.discourse.group/",
-            icon="fa-brands fa-discourse fa-fw",
-        ),
-        dict(
             name="GitHub",
-            url="https://github.com/mne-tools/mne-python",
+            url="https://github.com/griffithslab/whobpyt",
             icon="fa-brands fa-square-github fa-fw",
         ),
     ],
@@ -765,7 +736,8 @@ html_theme_options = {
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "_static/mne_logo_small.svg"
+#html_logo = "_static/mne_logo_small.svg"
+html_logo = "images/whobpyt_logo_v1.png"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -1108,52 +1080,39 @@ html_context = {
     # If these are changed, the Makefile should be updated, too
     "carousel": [
         dict(
-            title="Source Estimation",
-            text="Distributed, sparse, mixed-norm, beam\u00adformers, dipole fitting, and more.",  # noqa E501
+            title="Theoretical Background",
+            text="Stuff about theoretical background",
             url="auto_tutorials/inverse/index.html",
             img="sphx_glr_30_mne_dspm_loreta_008.gif",
-            alt="dSPM",
+            alt="dSPM"
         ),
         dict(
-            title="Machine Learning",
-            text="Advanced decoding models including time general\u00adiza\u00adtion.",  # noqa E501
+            title="Tutorials",
+            text="Some tutorials", 
             url="auto_tutorials/machine-learning/50_decoding.html",
             img="sphx_glr_50_decoding_006.png",
-            alt="Decoding",
+            alt="Decoding"
         ),
         dict(
-            title="Encoding Models",
-            text="Receptive field estima\u00adtion with optional smooth\u00adness priors.",  # noqa E501
+            title="Papers",
+            text="Published whobpyt research papers",
             url="auto_tutorials/machine-learning/30_strf.html",
             img="sphx_glr_30_strf_001.png",
-            alt="STRF",
+            alt="STRF"
         ),
         dict(
-            title="Statistics",
-            text="Parametric and non-parametric, permutation tests and clustering.",  # noqa E501
+            title="Examples",
+            text="Misc examples",
             url="auto_tutorials/stats-source-space/index.html",
             img="sphx_glr_20_cluster_1samp_spatiotemporal_001.png",
-            alt="Clusters",
+            alt="Clusters"
         ),
-        dict(
-            title="Connectivity",
-            text="All-to-all spectral and effective connec\u00adtivity measures.",  # noqa E501
-            url="https://mne.tools/mne-connectivity/stable/auto_examples/mne_inverse_label_connectivity.html",  # noqa E501
-            img="https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E501
-            alt="Connectivity",
-        ),
-        dict(
-            title="Data Visualization",
-            text="Explore your data from multiple perspectives.",
-            url="auto_tutorials/evoked/20_visualize_evoked.html",
-            img="sphx_glr_20_visualize_evoked_010.png",
-            alt="Visualization",
         ),
     ],
 }
 
 # Output file base name for HTML help builder.
-htmlhelp_basename = "mne-doc"
+htmlhelp_basename = "whobpyt-doc"
 
 
 # -- Options for plot_directive ----------------------------------------------
@@ -1191,6 +1150,7 @@ latex_documents = []
 # The name of an image file (relative to this directory) to place at the top of
 # the title page.
 latex_logo = "_static/logo.png"
+
 
 # For "manual" documents, if this is true, then toplevel headings are parts,
 # not chapters.
@@ -1263,6 +1223,7 @@ rst_prolog += f"\n.. |min_python_version| replace:: {min_py}\n"
 
 # Static list created 2021/04/13 based on what we needed to redirect,
 # since we don't need to add redirects for examples added after this date.
+""" # JG_MOD
 needed_plot_redirects = {
     # tutorials
     "10_epochs_overview.py",
@@ -1404,6 +1365,8 @@ needed_plot_redirects = {
     "xdawn_denoising.py",
     "xhemi.py",
 }
+""";
+
 api_redirects = {
     "connectivity",
     "covariance",
