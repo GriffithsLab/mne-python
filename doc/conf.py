@@ -477,7 +477,7 @@ sphinx_gallery_conf = {
             "../tutorials/epochs/",
             "../tutorials/evoked/" ] ),
     "gallery_dirs": gallery_dirs,
-    "default_thumb_file": os.path.join("_images", "whobpyt_logo_v1.png"),
+    "default_thumb_file": os.path.join("_static", "whobpyt_logo_v1.png"),
     "backreferences_dir": "generated",
     "plot_gallery": "True",  # Avoid annoying Unicode/bool default warning
     "thumbnail_size": (160, 112),
@@ -1428,59 +1428,6 @@ custom_redirects = {
     "whats_new": "development/whats_new",
     f"{tu}/evoked/plot_eeg_erp": f"{tu}/evoked/30_eeg_erp",
     f"{tu}/evoked/plot_whitened": f"{tu}/evoked/40_whitened",
-    f"{tu}/misc/plot_modifying_data_inplace": f"{tu}/intro/15_inplace",
-    f"{tu}/misc/plot_report": f"{tu}/intro/70_report",
-    f"{tu}/misc/plot_seeg": f"{tu}/clinical/20_seeg",
-    f"{tu}/misc/plot_ecog": f"{tu}/clinical/30_ecog",
-    f"{tu}/{ml}/plot_receptive_field": f"{tu}/{ml}/30_strf",
-    f"{tu}/{ml}/plot_sensors_decoding": f"{tu}/{ml}/50_decoding",
-    f"{tu}/{sm}/plot_background_freesurfer": f"{tu}/{fw}/10_background_freesurfer",
-    f"{tu}/{sm}/plot_source_alignment": f"{tu}/{fw}/20_source_alignment",
-    f"{tu}/{sm}/plot_forward": f"{tu}/{fw}/30_forward",
-    f"{tu}/{sm}/plot_eeg_no_mri": f"{tu}/{fw}/35_eeg_no_mri",
-    f"{tu}/{sm}/plot_background_freesurfer_mne": f"{tu}/{fw}/50_background_freesurfer_mne",  # noqa E501
-    f"{tu}/{sm}/plot_fix_bem_in_blender": f"{tu}/{fw}/80_fix_bem_in_blender",
-    f"{tu}/{sm}/plot_compute_covariance": f"{tu}/{fw}/90_compute_covariance",
-    f"{tu}/{sm}/plot_object_source_estimate": f"{tu}/{nv}/10_stc_class",
-    f"{tu}/{sm}/plot_dipole_fit": f"{tu}/{nv}/20_dipole_fit",
-    f"{tu}/{sm}/plot_mne_dspm_source_localization": f"{tu}/{nv}/30_mne_dspm_loreta",
-    f"{tu}/{sm}/plot_dipole_orientations": f"{tu}/{nv}/35_dipole_orientations",
-    f"{tu}/{sm}/plot_mne_solutions": f"{tu}/{nv}/40_mne_fixed_free",
-    f"{tu}/{sm}/plot_beamformer_lcmv": f"{tu}/{nv}/50_beamformer_lcmv",
-    f"{tu}/{sm}/plot_visualize_stc": f"{tu}/{nv}/60_visualize_stc",
-    f"{tu}/{sm}/plot_eeg_mri_coords": f"{tu}/{nv}/70_eeg_mri_coords",
-    f"{tu}/{sd}/plot_brainstorm_phantom_elekta": f"{tu}/{nv}/80_brainstorm_phantom_elekta",  # noqa E501
-    f"{tu}/{sd}/plot_brainstorm_phantom_ctf": f"{tu}/{nv}/85_brainstorm_phantom_ctf",
-    f"{tu}/{sd}/plot_phantom_4DBTi": f"{tu}/{nv}/90_phantom_4DBTi",
-    f"{tu}/{sd}/plot_brainstorm_auditory": f"{tu}/io/60_ctf_bst_auditory",
-    f"{tu}/{sd}/plot_sleep": f"{tu}/clinical/60_sleep",
-    f"{tu}/{di}/plot_background_filtering": f"{tu}/{pr}/25_background_filtering",
-    f"{tu}/{di}/plot_background_statistics": f"{tu}/{sn}/10_background_stats",
-    f"{tu}/{sn}/plot_stats_cluster_erp": f"{tu}/{sn}/20_erp_stats",
-    f"{tu}/{sn}/plot_stats_cluster_1samp_test_time_frequency": f"{tu}/{sn}/40_cluster_1samp_time_freq",  # noqa E501
-    f"{tu}/{sn}/plot_stats_cluster_time_frequency": f"{tu}/{sn}/50_cluster_between_time_freq",  # noqa E501
-    f"{tu}/{sn}/plot_stats_spatio_temporal_cluster_sensors": f"{tu}/{sn}/75_cluster_ftest_spatiotemporal",  # noqa E501
-    f"{tu}/{sr}/plot_stats_cluster_spatio_temporal": f"{tu}/{sr}/20_cluster_1samp_spatiotemporal",  # noqa E501
-    f"{tu}/{sr}/plot_stats_cluster_spatio_temporal_2samp": f"{tu}/{sr}/30_cluster_ftest_spatiotemporal",  # noqa E501
-    f"{tu}/{sr}/plot_stats_cluster_spatio_temporal_repeated_measures_anova": f"{tu}/{sr}/60_cluster_rmANOVA_spatiotemporal",  # noqa E501
-    f"{tu}/{sr}/plot_stats_cluster_time_frequency_repeated_measures_anova": f"{tu}/{sn}/70_cluster_rmANOVA_time_freq",  # noqa E501
-    f"{tu}/{tf}/plot_sensors_time_frequency": f"{tu}/{tf}/20_sensors_time_frequency",
-    f"{tu}/{tf}/plot_ssvep": f"{tu}/{tf}/50_ssvep",
-    f"{tu}/{si}/plot_creating_data_structures": f"{tu}/{si}/10_array_objs",
-    f"{tu}/{si}/plot_point_spread": f"{tu}/{si}/70_point_spread",
-    f"{tu}/{si}/plot_dics": f"{tu}/{si}/80_dics",
-    f"{tu}/{tf}/plot_eyetracking": f"{tu}/{pr}/90_eyetracking_data",
-    f"{ex}/{co}/mne_inverse_label_connectivity": f"{mne_conn}/{ex}/mne_inverse_label_connectivity",  # noqa E501
-    f"{ex}/{co}/cwt_sensor_connectivity": f"{mne_conn}/{ex}/cwt_sensor_connectivity",
-    f"{ex}/{co}/mixed_source_space_connectivity": f"{mne_conn}/{ex}/mixed_source_space_connectivity",  # noqa E501
-    f"{ex}/{co}/mne_inverse_coherence_epochs": f"{mne_conn}/{ex}/mne_inverse_coherence_epochs",  # noqa E501
-    f"{ex}/{co}/mne_inverse_connectivity_spectrum": f"{mne_conn}/{ex}/mne_inverse_connectivity_spectrum",  # noqa E501
-    f"{ex}/{co}/mne_inverse_envelope_correlation_volume": f"{mne_conn}/{ex}/mne_inverse_envelope_correlation_volume",  # noqa E501
-    f"{ex}/{co}/mne_inverse_envelope_correlation": f"{mne_conn}/{ex}/mne_inverse_envelope_correlation",  # noqa E501
-    f"{ex}/{co}/mne_inverse_psi_visual": f"{mne_conn}/{ex}/mne_inverse_psi_visual",
-    f"{ex}/{co}/sensor_connectivity": f"{mne_conn}/{ex}/sensor_connectivity",
-    f"{ex}/{vi}/publication_figure": f"{tu}/{vi}/10_publication_figure",
-    f"{ex}/{vi}/sensor_noise_level": f"{tu}/{pr}/50_artifact_correction_ssp",
 }
 
 # Adapted from sphinxcontrib/redirects (BSD-2-Clause)
