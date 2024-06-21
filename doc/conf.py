@@ -444,8 +444,8 @@ numpydoc_validation_exclude = {  # set of regex
 
 # -- Sphinx-gallery configuration --------------------------------------------
 
-examples_dirs = ["../tutorials", "../examples"]
-gallery_dirs = ["auto_tutorials", "auto_examples"]
+examples_dirs = ["../examples"] # ["../tutorials", "../examples"]
+gallery_dirs = ["auto_examples"] #  ["auto_tutorials", "auto_examples"]
 os.environ["_MNE_BUILDING_DOC"] = "true"
 scrapers = ("matplotlib",)
 mne.viz.set_3d_backend("pyvistaqt")
@@ -472,10 +472,7 @@ sphinx_gallery_conf = {
     "examples_dirs": examples_dirs,
     "subsection_order": ExplicitOrder(
         [   "../examples/realtime/",
-            "../examples/datasets/",
-            "../tutorials/preprocessing/",
-            "../tutorials/epochs/",
-            "../tutorials/evoked/" ] ),
+            "../examples/datasets/"]),
     "gallery_dirs": gallery_dirs,
     "default_thumb_file": os.path.join("_static", "whobpyt_logo_v1.png"),
     "backreferences_dir": "generated",
@@ -737,7 +734,7 @@ html_theme_options = {
 
 # The name of an image file (relative to this directory) to place at the top
 # of the sidebar.
-html_logo = "_static/mne_logo_small.svg"
+html_logo = "_static/whobpyt_logo_v1.png" #"_static/mne_logo_small.svg"
 
 # The name of an image file (within the static path) to use as favicon of the
 # docs.  This file should be a Windows icon file (.ico) being 16x16 or 32x32
@@ -796,336 +793,108 @@ html_context = {
         dict(
             img="erc.svg",
             size="3.5",
-            title="European Research Council",
+            title="Canadian Institute for Health Research",
             klass="only-light",
         ),
         dict(
             img="erc-dark.svg",
             size="3.5",
-            title="European Research Council",
+            title="Krembil Foundation",
             klass="only-dark",
         ),
-        dict(img="doe.svg", size="3", title="US Department of Energy"),
-        dict(img="anr.svg", size="3.5", title="Agence Nationale de la Recherche"),
         dict(
             img="cds.svg",
             size="1.75",
-            title="Paris-Saclay Center for Data Science",
+            title="Labbatt Foundation",
             klass="only-light",
         ),
         dict(
             img="cds-dark.svg",
             size="1.75",
-            title="Paris-Saclay Center for Data Science",
+            title="Branchout Foundation",
             klass="only-dark",
         ),
         dict(img="google.svg", size="2.25", title="Google"),
-        dict(img="amazon.svg", size="2.5", title="Amazon"),
-        dict(img="czi.svg", size="2.5", title="Chan Zuckerberg Initiative"),
     ],
     "institutions": [
         dict(
-            name="Massachusetts General Hospital",
+            name="Krembil Centre for Neuroinformatics",
             img="MGH.svg",
             url="https://www.massgeneral.org/",
             size=sm,
         ),
         dict(
-            name="Athinoula A. Martinos Center for Biomedical Imaging",
+            name="Centre for Addiction and Mental Health",
             img="Martinos.png",
             url="https://martinos.org/",
             size=md,
         ),
         dict(
-            name="Harvard Medical School",
+            name="University of Toronto",
             img="Harvard.png",
             url="https://hms.harvard.edu/",
             size=sm,
         ),
         dict(
-            name="Massachusetts Institute of Technology",
-            img="MIT.svg",
-            url="https://web.mit.edu/",
-            size=md,
-        ),
-        dict(
-            name="New York University",
-            img="NYU.svg",
-            url="https://www.nyu.edu/",
-            size=xs,
-            klass="only-light",
-        ),
-        dict(
-            name="New York University",
-            img="NYU-dark.svg",
-            url="https://www.nyu.edu/",
-            size=xs,
-            klass="only-dark",
-        ),
-        dict(
-            name="Commissariat à l´énergie atomique et aux énergies alternatives",  # noqa E501
+            name="University of Ottawa",
             img="CEA.png",
             url="http://www.cea.fr/",
             size=md,
-        ),
-        dict(
-            name="Aalto-yliopiston perustieteiden korkeakoulu",
-            img="Aalto.svg",
-            url="https://sci.aalto.fi/",
-            size=md,
-            klass="only-light",
-        ),
-        dict(
-            name="Aalto-yliopiston perustieteiden korkeakoulu",
-            img="Aalto-dark.svg",
-            url="https://sci.aalto.fi/",
-            size=md,
-            klass="only-dark",
-        ),
-        dict(
-            name="Télécom ParisTech",
-            img="Telecom_Paris_Tech.svg",
-            url="https://www.telecom-paris.fr/",
-            size=md,
-        ),
-        dict(
-            name="University of Washington",
-            img="Washington.svg",
-            url="https://www.washington.edu/",
-            size=md,
-            klass="only-light",
-        ),
-        dict(
-            name="University of Washington",
-            img="Washington-dark.svg",
-            url="https://www.washington.edu/",
-            size=md,
-            klass="only-dark",
-        ),
-        dict(
-            name="Institut du Cerveau et de la Moelle épinière",
-            img="ICM.jpg",
-            url="https://icm-institute.org/",
-            size=md,
-        ),
-        dict(
-            name="Boston University", img="BU.svg", url="https://www.bu.edu/", size=lg
-        ),
-        dict(
-            name="Institut national de la santé et de la recherche médicale",
-            img="Inserm.svg",
-            url="https://www.inserm.fr/",
-            size=xl,
-            klass="only-light",
-        ),
-        dict(
-            name="Institut national de la santé et de la recherche médicale",
-            img="Inserm-dark.svg",
-            url="https://www.inserm.fr/",
-            size=xl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Forschungszentrum Jülich",
-            img="Julich.svg",
-            url="https://www.fz-juelich.de/",
-            size=xl,
-            klass="only-light",
-        ),
-        dict(
-            name="Forschungszentrum Jülich",
-            img="Julich-dark.svg",
-            url="https://www.fz-juelich.de/",
-            size=xl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Technische Universität Ilmenau",
-            img="Ilmenau.svg",
-            url="https://www.tu-ilmenau.de/",
-            size=xxl,
-            klass="only-light",
-        ),
-        dict(
-            name="Technische Universität Ilmenau",
-            img="Ilmenau-dark.svg",
-            url="https://www.tu-ilmenau.de/",
-            size=xxl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Berkeley Institute for Data Science",
-            img="BIDS.svg",
-            url="https://bids.berkeley.edu/",
-            size=lg,
-            klass="only-light",
-        ),
-        dict(
-            name="Berkeley Institute for Data Science",
-            img="BIDS-dark.svg",
-            url="https://bids.berkeley.edu/",
-            size=lg,
-            klass="only-dark",
-        ),
-        dict(
-            name="Institut national de recherche en informatique et en automatique",  # noqa E501
-            img="inria.png",
-            url="https://www.inria.fr/",
-            size=xl,
-        ),
-        dict(
-            name="Aarhus Universitet",
-            img="Aarhus.svg",
-            url="https://www.au.dk/",
-            size=xl,
-            klass="only-light",
-        ),
-        dict(
-            name="Aarhus Universitet",
-            img="Aarhus-dark.svg",
-            url="https://www.au.dk/",
-            size=xl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Karl-Franzens-Universität Graz",
-            img="Graz.svg",
-            url="https://www.uni-graz.at/",
-            size=md,
-        ),
-        dict(
-            name="SWPS Uniwersytet Humanistycznospołeczny",
-            img="SWPS.svg",
-            url="https://www.swps.pl/",
-            size=xl,
-            klass="only-light",
-        ),
-        dict(
-            name="SWPS Uniwersytet Humanistycznospołeczny",
-            img="SWPS-dark.svg",
-            url="https://www.swps.pl/",
-            size=xl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Max-Planck-Institut für Bildungsforschung",
-            img="MPIB.svg",
-            url="https://www.mpib-berlin.mpg.de/",
-            size=xxl,
-            klass="only-light",
-        ),
-        dict(
-            name="Max-Planck-Institut für Bildungsforschung",
-            img="MPIB-dark.svg",
-            url="https://www.mpib-berlin.mpg.de/",
-            size=xxl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Macquarie University",
-            img="Macquarie.svg",
-            url="https://www.mq.edu.au/",
-            size=lg,
-            klass="only-light",
-        ),
-        dict(
-            name="Macquarie University",
-            img="Macquarie-dark.svg",
-            url="https://www.mq.edu.au/",
-            size=lg,
-            klass="only-dark",
-        ),
-        dict(
-            name="AE Studio",
-            img="AE-Studio-light.svg",
-            url="https://ae.studio/",
-            size=xxl,
-            klass="only-light",
-        ),
-        dict(
-            name="AE Studio",
-            img="AE-Studio-dark.svg",
-            url="https://ae.studio/",
-            size=xxl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Children’s Hospital of Philadelphia Research Institute",
-            img="CHOP.svg",
-            url="https://www.research.chop.edu/imaging",
-            size=xxl,
-            klass="only-light",
-        ),
-        dict(
-            name="Children’s Hospital of Philadelphia Research Institute",
-            img="CHOP-dark.svg",
-            url="https://www.research.chop.edu/imaging",
-            size=xxl,
-            klass="only-dark",
-        ),
-        dict(
-            name="Donders Institute for Brain, Cognition and Behaviour at Radboud University",  # noqa E501
-            img="Donders.png",
-            url="https://www.ru.nl/donders/",
-            size=xl,
-        ),
-        dict(
-            name="Human Neuroscience Platforn at Fondation Campus Biotech Geneva",  # noqa E501
-            img="FCBG.svg",
-            url="https://hnp.fcbg.ch/",
-            size=sm,
-        ),
+        )
     ],
     # \u00AD is an optional hyphen (not rendered unless needed)
     # If these are changed, the Makefile should be updated, too
     "carousel": [
         dict(
-            title="Source Estimation",
-            text="Distributed, sparse, mixed-norm, beam\u00adformers, dipole fitting, and more.",  # noqa E501
+            title="Background & Theory",
+            text="background and theory", # noqa E501
             url="auto_tutorials/inverse/index.html",
             img='Momi2023_Fig.jpg',##"sphx_glr_30_mne_dspm_loreta_008.gif",
             alt="dSPM",
         ),
         dict(
-            title="Machine Learning",
-            text="Advanced decoding models including time general\u00adiza\u00adtion.",  # noqa E501
+            title="Modelling EEG data",
+            text="Modelling EEG data",
             url="auto_tutorials/machine-learning/50_decoding.html",
             img='Momi2024_Fig.png', ##"sphx_glr_50_decoding_006.png",
             alt="Decoding",
         ),
         dict(
-            title="Encoding Models",
-            text="Receptive field estimation with optional smoothness priors.",  # noqa E501
+            title="Modelling fMRI data",
+            text="Modelling fMRI data",
             url="auto_tutorials/machine-learning/30_strf.html",
             img='Griffiths2022_Fig.png', ##i"sphx_glr_30_strf_001.png",
             alt="STRF",
         ),
         dict(
-            title="Statistics",
-            text="Parametric and non-parametric, permutation tests and clustering.",  # noqa E501
+            title="Published studies",
+            text="Published sutdies",
             url="auto_tutorials/stats-source-space/index.html",
             img="Momi2024_Fig.png", #"sphx_glr_20_cluster_1samp_spatiotemporal_001.png",
             alt="Clusters",
         ),
         dict(
-            title="Connectivity",
-            text="All-to-all spectral and effective connectivity measures.",  # noqa E501
+            title="Tips & Tricks",
+            text="Tips & tricks",
             url="https://mne.tools/mne-connectivity/stable/auto_examples/mne_inverse_label_connectivity.html",  # noqa E501
             img="https://drive.google.com/uc?export=view&id=1wJaFEEk6hDfeOCjix2v_BhmWmNak9VzO", # "https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E501
             alt="Connectivity",
         ),
-        dict(
-            title="Data Visualization",
-            text="Explore your data from multiple perspectives.",
-            url="auto_tutorials/evoked/20_visualize_evoked.html",
-            img="https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E50,
-            alt="Visualization",
-        ),
     ],
 }
 
+# what goes in the carousel?
+# Background & theory
+# Modelling EEG
+# Modelling fMRI
+# Modelling brain stimulation
+# Published studies
+# Tips & tricks
+
+
+
 # Output file base name for HTML help builder.
-htmlhelp_basename = "mne-doc"
+htmlhelp_basename = "whobpyt-doc"
 
 
 # -- Options for plot_directive ----------------------------------------------
@@ -1232,192 +1001,9 @@ min_py = metadata("mne")["Requires-Python"].lstrip(" =<>")
 rst_prolog += f"\n.. |min_python_version| replace:: {min_py}\n"
 
 # -- website redirects --------------------------------------------------------
-
-# Static list created 2021/04/13 based on what we needed to redirect,
-# since we don't need to add redirects for examples added after this date.
-needed_plot_redirects = {
-    # tutorials
-    "10_epochs_overview.py",
-    "10_evoked_overview.py",
-    "10_overview.py",
-    "10_preprocessing_overview.py",
-    "10_raw_overview.py",
-    "10_reading_meg_data.py",
-    "15_handling_bad_channels.py",
-    "20_event_arrays.py",
-    "20_events_from_raw.py",
-    "20_reading_eeg_data.py",
-    "20_rejecting_bad_data.py",
-    "20_visualize_epochs.py",
-    "20_visualize_evoked.py",
-    "30_annotate_raw.py",
-    "30_epochs_metadata.py",
-    "30_filtering_resampling.py",
-    "30_info.py",
-    "30_reading_fnirs_data.py",
-    "35_artifact_correction_regression.py",
-    "40_artifact_correction_ica.py",
-    "40_autogenerate_metadata.py",
-    "40_sensor_locations.py",
-    "40_visualize_raw.py",
-    "45_projectors_background.py",
-    "50_artifact_correction_ssp.py",
-    "50_configure_mne.py",
-    "50_epochs_to_data_frame.py",
-    "55_setting_eeg_reference.py",
-    "59_head_positions.py",
-    "60_make_fixed_length_epochs.py",
-    "60_maxwell_filtering_sss.py",
-    "70_fnirs_processing.py",
-    # examples
-    "3d_to_2d.py",
-    "brainstorm_data.py",
-    "channel_epochs_image.py",
-    "cluster_stats_evoked.py",
-    "compute_csd.py",
-    "compute_mne_inverse_epochs_in_label.py",
-    "compute_mne_inverse_raw_in_label.py",
-    "compute_mne_inverse_volume.py",
-    "compute_source_psd_epochs.py",
-    "covariance_whitening_dspm.py",
-    "custom_inverse_solver.py",
-    "decoding_csp_eeg.py",
-    "decoding_csp_timefreq.py",
-    "decoding_spatio_temporal_source.py",
-    "decoding_spoc_CMC.py",
-    "decoding_time_generalization_conditions.py",
-    "decoding_unsupervised_spatial_filter.py",
-    "decoding_xdawn_eeg.py",
-    "define_target_events.py",
-    "dics_source_power.py",
-    "eeg_csd.py",
-    "eeg_on_scalp.py",
-    "eeglab_head_sphere.py",
-    "elekta_epochs.py",
-    "ems_filtering.py",
-    "eog_artifact_histogram.py",
-    "evoked_arrowmap.py",
-    "evoked_ers_source_power.py",
-    "evoked_topomap.py",
-    "evoked_whitening.py",
-    "fdr_stats_evoked.py",
-    "find_ref_artifacts.py",
-    "fnirs_artifact_removal.py",
-    "forward_sensitivity_maps.py",
-    "gamma_map_inverse.py",
-    "hf_sef_data.py",
-    "ica_comparison.py",
-    "interpolate_bad_channels.py",
-    "label_activation_from_stc.py",
-    "label_from_stc.py",
-    "label_source_activations.py",
-    "left_cerebellum_volume_source.py",
-    "limo_data.py",
-    "linear_model_patterns.py",
-    "linear_regression_raw.py",
-    "meg_sensors.py",
-    "mixed_norm_inverse.py",
-    "mixed_source_space_inverse.py",
-    "mne_cov_power.py",
-    "mne_helmet.py",
-    "mne_inverse_coherence_epochs.py",
-    "mne_inverse_envelope_correlation.py",
-    "mne_inverse_envelope_correlation_volume.py",
-    "mne_inverse_psi_visual.py",
-    "morph_surface_stc.py",
-    "morph_volume_stc.py",
-    "movement_compensation.py",
-    "movement_detection.py",
-    "multidict_reweighted_tfmxne.py",
-    "muscle_detection.py",
-    "opm_data.py",
-    "otp.py",
-    "parcellation.py",
-    "psf_ctf_label_leakage.py",
-    "psf_ctf_vertices.py",
-    "psf_ctf_vertices_lcmv.py",
-    "publication_figure.py",
-    "rap_music.py",
-    "trap_music.py",
-    "read_inverse.py",
-    "read_neo_format.py",
-    "read_noise_covariance_matrix.py",
-    "read_stc.py",
-    "receptive_field_mtrf.py",
-    "resolution_metrics.py",
-    "resolution_metrics_eegmeg.py",
-    "roi_erpimage_by_rt.py",
-    "sensor_noise_level.py",
-    "sensor_permutation_test.py",
-    "sensor_regression.py",
-    "shift_evoked.py",
-    "simulate_evoked_data.py",
-    "simulate_raw_data.py",
-    "simulated_raw_data_using_subject_anatomy.py",
-    "snr_estimate.py",
-    "source_label_time_frequency.py",
-    "source_power_spectrum.py",
-    "source_power_spectrum_opm.py",
-    "source_simulator.py",
-    "source_space_morphing.py",
-    "source_space_snr.py",
-    "source_space_time_frequency.py",
-    "ssd_spatial_filters.py",
-    "ssp_projs_sensitivity_map.py",
-    "temporal_whitening.py",
-    "time_frequency_erds.py",
-    "time_frequency_global_field_power.py",
-    "time_frequency_mixed_norm_inverse.py",
-    "time_frequency_simulated.py",
-    "topo_compare_conditions.py",
-    "topo_customized.py",
-    "vector_mne_solution.py",
-    "virtual_evoked.py",
-    "xdawn_denoising.py",
-    "xhemi.py",
-}
-api_redirects = {
-    "connectivity",
-    "covariance",
-    "creating_from_arrays",
-    "datasets",
-    "decoding",
-    "events",
-    "export",
-    "file_io",
-    "forward",
-    "inverse",
-    "logging",
-    "most_used_classes",
-    "mri",
-    "preprocessing",
-    "python_reference",
-    "reading_raw_data",
-    "realtime",
-    "report",
-    "sensor_space",
-    "simulation",
-    "source_space",
-    "statistics",
-    "time_frequency",
-    "visualization",
-}
 ex = "auto_examples"
-co = "connectivity"
-mne_conn = "https://mne.tools/mne-connectivity/stable"
-tu = "auto_tutorials"
-pr = "preprocessing"
-di = "discussions"
-sm = "source-modeling"
-fw = "forward"
-nv = "inverse"
-sn = "stats-sensor-space"
-sr = "stats-source-space"
-sd = "sample-datasets"
-ml = "machine-learning"
-tf = "time-freq"
-si = "simulation"
-vi = "visualization"
+#tu = "auto_tutorials"
+#vi = "visualization"
 custom_redirects = {
     # Custom redirects (one HTML path to another, relative to outdir)
     # can be added here as fr->to key->value mappings
@@ -1425,9 +1011,7 @@ custom_redirects = {
     "overview/cite": "documentation/cite",
     "overview/get_help": "help/index",
     "overview/roadmap": "development/roadmap",
-    "whats_new": "development/whats_new",
-    f"{tu}/evoked/plot_eeg_erp": f"{tu}/evoked/30_eeg_erp",
-    f"{tu}/evoked/plot_whitened": f"{tu}/evoked/40_whitened",
+    "whats_new": "development/whats_new", #f"{tu}/evoked/plot_eeg_erp": f"{tu}/evoked/30_eeg_erp",
 }
 
 # Adapted from sphinxcontrib/redirects (BSD-2-Clause)
