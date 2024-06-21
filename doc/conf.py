@@ -51,7 +51,7 @@ mne.html_templates._templates._COLLAPSED = True  # collapse info _repr_html_
 curpath = Path(__file__).parent.resolve(strict=True)
 sys.path.append(str(curpath / "sphinxext"))
 
-from mne_doc_utils import report_scraper, reset_warnings  # noqa: E402
+# from mne_doc_utils import report_scraper, reset_warnings  # noqa: E402        # JG_MOD
 
 # -- Project information -----------------------------------------------------
 
@@ -105,6 +105,9 @@ extensions = [
     "sphinxcontrib.bibtex",
     "sphinxcontrib.youtube",
     "sphinxcontrib.towncrier.ext",
+]
+# JG MOD - REMOVING THESE
+"""
     # homegrown
     "contrib_avatars",
     "gen_commands",
@@ -114,6 +117,7 @@ extensions = [
     "newcontrib_substitutions",
     "unit_role",
 ]
+"""
 
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ["_templates"]
@@ -449,12 +453,8 @@ pyvista.OFF_SCREEN = False
 pyvista.BUILDING_GALLERY = True
 
 scrapers = (
-    "matplotlib",
-    "mne_doc_utils.gui_scraper",
-    "mne_doc_utils.brain_scraper",
-    "pyvista",
-    "mne_doc_utils.report_scraper",
-    "mne_doc_utils.mne_qt_browser_scraper",
+    "matplotlib", #    "mne_doc_utils.gui_scraper",  "mne_doc_utils.brain_scraper",  # JG_MOD
+    "pyvista" #   "mne_doc_utils.report_scraper",   "mne_doc_utils.mne_qt_browser_scraper",  # JG_MOD
 )
 
 compress_images = ("images", "thumbnails")
@@ -512,8 +512,7 @@ sphinx_gallery_conf = {
     "min_reported_time": 1.0,
     "abort_on_example_error": False,
     "reset_modules": (
-        "matplotlib",
-        "mne_doc_utils.reset_modules",
+        "matplotlib" # "mne_doc_utils.reset_modules",  # JG_MOD
     ),  # called w/each script
     "reset_modules_order": "both",
     "image_scrapers": scrapers,
@@ -1111,42 +1110,42 @@ html_context = {
             title="Source Estimation",
             text="Distributed, sparse, mixed-norm, beam\u00adformers, dipole fitting, and more.",  # noqa E501
             url="auto_tutorials/inverse/index.html",
-            img="sphx_glr_30_mne_dspm_loreta_008.gif",
+            img='Momi2023_Fig.jpg',##"sphx_glr_30_mne_dspm_loreta_008.gif",
             alt="dSPM",
         ),
         dict(
             title="Machine Learning",
             text="Advanced decoding models including time general\u00adiza\u00adtion.",  # noqa E501
             url="auto_tutorials/machine-learning/50_decoding.html",
-            img="sphx_glr_50_decoding_006.png",
+            img='Momi2024_Fig.png', ##"sphx_glr_50_decoding_006.png",
             alt="Decoding",
         ),
         dict(
             title="Encoding Models",
-            text="Receptive field estima\u00adtion with optional smooth\u00adness priors.",  # noqa E501
+            text="Receptive field estimation with optional smoothness priors.",  # noqa E501
             url="auto_tutorials/machine-learning/30_strf.html",
-            img="sphx_glr_30_strf_001.png",
+            img='Griffiths2022_Fig.png', ##i"sphx_glr_30_strf_001.png",
             alt="STRF",
         ),
         dict(
             title="Statistics",
             text="Parametric and non-parametric, permutation tests and clustering.",  # noqa E501
             url="auto_tutorials/stats-source-space/index.html",
-            img="sphx_glr_20_cluster_1samp_spatiotemporal_001.png",
+            img="Momi2024_Fig.png", #"sphx_glr_20_cluster_1samp_spatiotemporal_001.png",
             alt="Clusters",
         ),
         dict(
             title="Connectivity",
-            text="All-to-all spectral and effective connec\u00adtivity measures.",  # noqa E501
+            text="All-to-all spectral and effective connectivity measures.",  # noqa E501
             url="https://mne.tools/mne-connectivity/stable/auto_examples/mne_inverse_label_connectivity.html",  # noqa E501
-            img="https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E501
+            img="https://drive.google.com/uc?export=view&id=1wJaFEEk6hDfeOCjix2v_BhmWmNak9VzO", # "https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E501
             alt="Connectivity",
         ),
         dict(
             title="Data Visualization",
             text="Explore your data from multiple perspectives.",
             url="auto_tutorials/evoked/20_visualize_evoked.html",
-            img="sphx_glr_20_visualize_evoked_010.png",
+            img="https://mne.tools/mne-connectivity/stable/_images/sphx_glr_mne_inverse_label_connectivity_001.png",  # noqa E50,
             alt="Visualization",
         ),
     ],
@@ -1197,7 +1196,7 @@ latex_logo = "_static/logo.png"
 latex_toplevel_sectioning = "part"
 
 # -- Warnings management -----------------------------------------------------
-reset_warnings(None, None)
+# reset_warnings(None, None)  # JG_MOD
 
 # -- Fontawesome support -----------------------------------------------------
 brand_icons = ("apple", "linux", "windows", "discourse", "python")
@@ -1650,8 +1649,8 @@ def make_version(app, exception):
 def setup(app):
     """Set up the Sphinx app."""
     app.connect("autodoc-process-docstring", append_attr_meth_examples)
-    report_scraper.app = app
-    app.connect("builder-inited", report_scraper.copyfiles)
+    # report_scraper.app = app # JG_MOD
+    # app.connect("builder-inited", report_scraper.copyfiles) # JG_MOD
     app.connect("build-finished", make_gallery_redirects)
     app.connect("build-finished", make_api_redirects)
     app.connect("build-finished", make_custom_redirects)
